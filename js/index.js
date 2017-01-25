@@ -45,10 +45,13 @@ var app = {
 var app = angular.module('myApp', []); 
 app.controller('toodoo', function($scope) {
     $scope.todoList = [{todoText:"", done:false}];
-
+    
     $scope.todoAdd = function() {
-        $scope.todoList.push({todoText:$scope.todoInput, done:false});
+        $scope.todoList.push({todoText:$scope.todoInput +"("+ $scope.onez+")", done:false});
+
         $scope.todoInput = "";
+      
+        
     };
 
     $scope.remove = function() {
