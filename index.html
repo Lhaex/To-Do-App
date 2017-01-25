@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="js/angular.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+<body ng-app="myApp" ng-controller="toodoo">
+<div class="head">
+    <h1> <i>TooDoow</i></h1>    
+</div>
+
+<div class="section">
+<form ng-submit="todoAdd()">
+    <input type="text" ng-model="todoInput" size="50" placeholder="Doing anything?" style=" font-size:15px; width: 60%; height: 50px;float:left;">
+   <input type="submit" value="Save" class="button" style="width: 30%; height: 50px;float:left; font-size:30px;">
+</form>
+</div>
+<br>
+
+<div ng-repeat="x in todoList">
+    <input type="checkbox" ng-model="x.done" style="width: 20px; height: 20px;"> <span ng-bind="x.todoText" ></span>
+</div>
+
+<p><button ng-click="remove()" style="background-color: orange; width: 40%; height: 50px; font-size:10px;">Remove</button></p>
+
+
+
+</body>
+</html>
